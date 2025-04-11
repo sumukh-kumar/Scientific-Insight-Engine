@@ -26,22 +26,23 @@ def extract_titles(text):
 
     return titles
 
-def extract_abstract(title): # WIll get closest match to the title even if it doesnt exist or returns empty
+def extract_abstract(title):
     client = arxiv.Client()
     search = arxiv.Search(
-        query=title,
-        max_results= 1, 
+        query=f'ti:"{title}"',
+        max_results=3,
         sort_by=arxiv.SortCriterion.Relevance
     )
-    
+
     try:
         results = list(client.results(search))
     except arxiv.UnexpectedEmptyPageError:
-        return "CANNOT FIND PAPER"
+        return title, "CANNOT FIND PAPER"
 
     if not results:
-        return "CANNOT FIND PAPER"
+        return title, "CANNOT FIND PAPER"
 
-    return results[0].title
+    for result in results:
+            return result.title, result.summary
     
         
