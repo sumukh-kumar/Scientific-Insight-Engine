@@ -58,7 +58,8 @@ for (title, _), score in top_papers:
 
 with open("ranked_papers.csv", mode="w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
-    writer.writerow(["Title", "Similarity"])
+    writer.writerow(["Title", "Similarity","Link"])
     for (title, _), score in top_papers:
-        writer.writerow([title, round(score.item(), 4)])
+        link = functions.extract_link(title)
+        writer.writerow([title,round(score.item(), 4) , link ])
 

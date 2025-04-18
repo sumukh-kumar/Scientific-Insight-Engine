@@ -45,4 +45,22 @@ def extract_abstract(title):
     for result in results:
             return result.title, result.summary
     
+def extract_link(title):
+    client = arxiv.Client()
+    search = arxiv.Search(
+        query=f'ti:"{title}"',
+        max_results=3,
+        sort_by=arxiv.SortCriterion.Relevance
+    )
+
+    try:
+        results = list(client.results(search))
+    except arxiv.UnexpectedEmptyPageError:
+        return title, "CANNOT FIND PAPER"
+
+    if not results:
+        return title, "CANNOT FIND PAPER"
+
+    for result in results:
+        return result.pdf_url
         
