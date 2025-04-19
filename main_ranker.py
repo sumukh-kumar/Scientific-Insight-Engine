@@ -2,6 +2,7 @@ import functions
 from sentence_transformers import SentenceTransformer, util
 import sbert_ranking
 import csv
+import module2
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
@@ -59,7 +60,22 @@ for (title, _), score in top_papers:
 with open("ranked_papers.csv", mode="w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
     writer.writerow(["Title", "Similarity","Link"])
+    urls=[]
     for (title, _), score in top_papers:
         link = functions.extract_link(title)
+        urls.append(link)
         writer.writerow([title,round(score.item(), 4) , link ])
 
+
+
+keywords = [input() for i in range(int(input("enter the number of keywords: ")))]
+
+extracted_info = module2.para_extractor(main_title,urls,keywords)
+
+with open("extracted_info.txt", mode="w", newline="", encoding="utf-8") as fp:
+    for paper in extracted_info:
+        fp.write(f"\n📘 Paper: {paper['title']}")
+        for keyword, matches in paper['keywords'].items():
+            fp.write(f"\n🔑 Keyword: {keyword}")
+            for para, score in matches:
+                fp.write(f"\n→ Score: {score:.2f}\n{para}\n{'-'*80}")
