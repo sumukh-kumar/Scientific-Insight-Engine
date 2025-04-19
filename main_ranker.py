@@ -3,6 +3,7 @@ from sentence_transformers import SentenceTransformer, util
 import sbert_ranking
 import csv
 import module2
+import re
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
@@ -72,10 +73,13 @@ keywords = [input() for i in range(int(input("enter the number of keywords: ")))
 
 extracted_info = module2.para_extractor(main_title,urls,keywords)
 
-with open("extracted_info.txt", mode="w", newline="", encoding="utf-8") as fp:
-    for paper in extracted_info:
-        fp.write(f"\n📘 Paper: {paper['title']}")
+i=0
+for paper in extracted_info:
+    with open(f"extracted_info{i}.txt", mode="w", newline="", encoding="utf-8") as fp: 
+        fp.write(f"Paper: {paper['title']}")
         for keyword, matches in paper['keywords'].items():
-            fp.write(f"\n🔑 Keyword: {keyword}")
             for para, score in matches:
-                fp.write(f"\n→ Score: {score:.2f}\n{para}\n{'-'*80}")
+                sentences = re.split(r'(?<=[.!?]) +', para)
+                for sentence in sentences:
+                    fp.write(f"\n{sentence}")
+    i+=1
