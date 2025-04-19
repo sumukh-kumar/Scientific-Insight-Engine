@@ -167,6 +167,7 @@ def para_extractor(paper_title,paper_urls,keywords):
     else:
         print("Paper not found.")
 
+    paper_urls.insert(0,pdf_link)
 
     info = extract_info_semantically(paper_urls, keywords)
 
@@ -177,34 +178,3 @@ def para_extractor(paper_title,paper_urls,keywords):
             for para, score in matches:
                 print(f"\n→ Score: {score:.2f}\n{para}\n{'-'*80}")
     return info
-
-if __name__== "__main__":
-    paper_urls = ["https://arxiv.org/pdf/2103.00020.pdf"]
-    keywords = ["Language","latent space", "visual", "transformer","CLIP"]
-    
-    info = extract_info_semantically(paper_urls, keywords, top_k=3)
-
-    paper_id = paper_urls[0].split("/")[-1].replace(".pdf", "")
-    search = arxiv.Search(id_list=[paper_id])
-    paper = next(search.results())
-    pdf_url = paper.pdf_url
-    print(f"📄 Processing: {paper.title}")
-
-    pdf_bytes = download_pdf(pdf_url)
-    full_text = extract_text_from_pdf(pdf_bytes)
-
-    x=smart_split_paragraphs1(full_text)
-    len(x)
-    for i in x:
-        if len(i.split())<7:
-            print(i)
-    i=0
-    i+=1
-    print(x[i])
-    print(i)
-    len(x[i].split())
-    i=i-2
-    for i, p in enumerate(smart_split_paragraphs1(full_text)):
-        print(f"\n--- Paragraph {i+1} ---\n{p}")
-
-    info[0]['keywords']['CLIP'][7]
