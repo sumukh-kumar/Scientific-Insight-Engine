@@ -11,7 +11,6 @@ import plotly.graph_objects as go
 #nltk.download('averaged_perceptron_tagger_eng')
 
 def parse_papers(text):
-    """Parse papers from the input text format."""
     paper_sections = re.split(r'Paper:\s*', text)
     papers = []
     
@@ -28,7 +27,6 @@ def parse_papers(text):
     return papers
 
 def calculate_domain_relevance(paper_content, domain_terms):
-    """Calculate a score showing how relevant a paper is to the domain terms."""
     content_lower = paper_content.lower()
     score = 0
     
@@ -137,15 +135,17 @@ def visualize_interactive_graph(G):
         if node in papers:
             score = G.nodes[node].get('domain_score', 0)
             node_text.append(f"{node if len(node) <= 30 else node[:27] + '...'}<br>Domain relevance: {score}")
-
-            node_size.append(15 + (score/max_score * 25) if max_score > 0 else 15)
+            
+            
+            node_size.append(30 + (score/max_score * 40) if max_score > 0 else 30)
             
             intensity = 0.5 + (0.5 * score/max_score) if max_score > 0 else 0.5
             node_color.append(f'rgba(66, 135, 245, {intensity})')
         else:
             node_text.append(node if len(node) <= 30 else node[:27] + "...")
             node_color.append('gray')
-            node_size.append(10)
+          
+            node_size.append(25)
 
     edge_x, edge_y = [], []
     for u, v in G.edges():
@@ -164,7 +164,7 @@ def visualize_interactive_graph(G):
             showscale=False, 
             color=node_color,
             size=node_size,
-            line=dict(width=1, color='black')
+            line=dict(width=1.5, color='black')  
         ),
         text=node_text 
     )
@@ -173,14 +173,14 @@ def visualize_interactive_graph(G):
         edge_trace = go.Scatter(
             x=edge_x, y=edge_y,
             mode='lines',
-            line=dict(width=0.5, color='gray'),
+            line=dict(width=0.8, color='gray'),  
             hoverinfo='none'
         )
     else:
         edge_trace = go.Scatter(
             x=[], y=[],
             mode='lines',
-            line=dict(width=0.5, color='gray'),
+            line=dict(width=0.8, color='gray'),
             hoverinfo='none'
         )
 
@@ -190,7 +190,7 @@ def visualize_interactive_graph(G):
                         hovermode='closest',
                         title=dict(
                             text="Knowledge Graph of Research Papers with Domain Relevance",
-                            font=dict(size=16)
+                            font=dict(size=18)  
                         ),
                         xaxis=dict(
                             showgrid=False, 
@@ -211,7 +211,7 @@ def visualize_interactive_graph(G):
             xref="paper", yref="paper",
             text="Node size and color intensity<br>indicate domain relevance",
             showarrow=False,
-            font=dict(size=12)
+            font=dict(size=14)  
         )
     ]
     fig.update_layout(annotations=annotations)
@@ -220,7 +220,6 @@ def visualize_interactive_graph(G):
 
 
 def generate_knowledge_graph_interactive(text):
-    """Generate an interactive knowledge graph from paper text."""
     domain_terms = get_domain_terms_from_user()
     papers = parse_papers(text)
     G = build_filtered_knowledge_graph(papers, domain_terms)
