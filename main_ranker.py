@@ -84,7 +84,7 @@ for paper in extracted_info:
                 for sentence in sentences:
                     fp.write(f"\n{sentence}")
     i+=1
-#simplification part
+#simplify part
 num_extracted_files = 10  
 
 simplify_extracted_info_and_save_all_in_one_file(num_files=num_extracted_files, 
