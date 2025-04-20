@@ -4,6 +4,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from nltk.tokenize import sent_tokenize
 import nltk
+
 #nltk.download('punkt_tab') uncomment if not downloaded
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu") #use GPU

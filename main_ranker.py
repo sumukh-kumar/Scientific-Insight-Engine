@@ -5,6 +5,7 @@ import csv
 import module2
 import re
 from simplification import simplify_extracted_info_and_save_all_in_one_file
+from knowledge_graph import generate_knowledge_graph_interactive
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
@@ -89,3 +90,9 @@ num_extracted_files = 10
 
 simplify_extracted_info_and_save_all_in_one_file(num_files=num_extracted_files, 
                                                 output_filename="simplified_output.txt")
+
+#knowledge graph:
+with open("simplified_output.txt", "r", encoding="utf-8") as f:
+        paper_text = f.read()
+    
+G = generate_knowledge_graph_interactive(paper_text)
