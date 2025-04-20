@@ -73,7 +73,6 @@ def extract_key_terms(text, domain_terms, n=2):
 
 
 def build_filtered_knowledge_graph(papers, domain_terms, min_connections=2):
-    """Build a knowledge graph with filtering for importance."""
     G = nx.Graph()
     
     all_paper_terms = {}
