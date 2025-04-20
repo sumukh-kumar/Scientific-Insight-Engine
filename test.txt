@@ -1,0 +1,57 @@
+[1] G. Barenboim, J. Hirn, and V. Sanz, Symmetry meets ai, SciPost Physics 11 (2021), no. 1
+014.
+[2] G. Barenboim, L. Del Debbio, J. Hirn, and V. Sanz, Exploring how a generative ai interprets
+music, Neural Computing and Applications 36 (2024).
+[3] T. S. Cohen and M. Welling, Group equivariant convolutional networks, in Proceedings of the
+33rd International Conference on Machine Learning (ICML), vol. 48 of PMLR,
+pp. 2990–2999, 2016.
+[4] X. Chen, Y. Duan, R. Houthooft, J. Schulman, I. Sutskever, and P. Abbeel, InfoGAN:
+Interpretable representation learning by information maximizing generative adversarial nets,
+NeurIPS 29 (2016).
+[5] I. Higgins and et al., beta-VAE: Learning basic visual concepts with a constrained variational
+framework, in ICLR, 2017.
+[6] H. Kim and A. Mnih, Disentangling by factorising, in ICML, 2018.
+[7] R. T. Q. Chen and et al., Isolating sources of disentanglement in vaes, in NeurIPS, 2018.
+[8] F. Locatello and et al., Challenging common assumptions in the unsupervised learning of
+disentangled representations, in ICML, 2019.
+[9] J. Yang, N. Dehmamy, R. Walters, and R. Yu, Latent space symmetry discovery, in
+Proceedings of the 41st International Conference on Machine Learning (ICML), 2024.
+[10] G. Barenboim, J. Hirn, and V. Sanz, Symmetry meets AI, SciPost Phys. 11 (2021) 014.
+[11] A. Bogatskiy, T. Hoffman, D. W. Miller, and J. T. Offermann, Pelican: Permutation
+equivariant and lorentz invariant or covariant aggregator network for particle physics, arXiv
+preprint arXiv:2211.00454 (2022).
+– 16 –
+[12] Z. Hao, R. Kansal, J. Duarte, and N. Chernyavskaya, Lorentz group equivariant
+autoencoders, Eur. Phys. J. C 83 (2023) 485.
+[13] B. M. Dillon, G. Kasieczka, H. Olischl¨ager, T. Plehn, P. Sorrenson, and L. Vogel,
+Symmetries, safety, and self-supervision, SciPost Phys. 12 (2022) 188.
+[14] B. M. Dillon, T. Plehn, C. Sauer, and P. Sorrenson, Better latent spaces for better
+autoencoders, SciPost Phys. 11 (2021) 061.
+[15] G. Barenboim, L. Del Debbio, J. Hirn, and V. Sanz, Exploring how a generative AI
+interprets music, Neural Computing and Applications 36 (2024), no. 27 17007–17022.
+[16] A. Roberts, J. Engel, C. Raffel, C. Hawthorne, and D. Eck, A hierarchical latent vector
+model for learning long-term structure in music, 2019.
+[17] R. Iten and et al., Discovering physical concepts with neural networks, Physical Review
+Letters 124 (2020), no. 1 010508.
+[18] H. Kim and A. Mnih, Disentangling by factorizing, in Proceedings of the 35th International
+Conference on Machine Learning (ICML), pp. 2649–2658, PMLR, 2018.
+[19] R. T. Q. Chen, X. Li, R. B. Grosse, and D. K. Duvenaud, Isolating sources of
+disentanglement in variational autoencoders, in Advances in Neural Information Processing
+Systems 31 (NeurIPS 2018), pp. 2615–2625, 2018.
+[20] J. Alwall, R. Frederix, S. Frixione, V. Hirschi, F. Maltoni, O. Mattelaer, H. S. Shao,
+T. Stelzer, P. Torrielli, and M. Zaro, The automated computation of tree-level and
+next-to-leading order differential cross sections, and their matching to parton shower
+simulations, JHEP 07 (2014) 079, [arXiv:1405.0301].
+[21] R. Frederix, S. Frixione, V. Hirschi, D. Pagani, H. S. Shao, and M. Zaro, The automation of
+next-to-leading order electroweak calculations, JHEP 07 (2018) 185, [arXiv:1804.10017].
+[22] I. T. Jolliffe, Principal Component Analysis. Springer, 2nd ed., 2002.
+[23] P. Baldi and K. Hornik, Neural networks and principal component analysis: Learning from
+examples without local minima, Neural Networks 2 (1989), no. 1 53–58.
+[24] L. Falorsi, P. De Haan, T. Davidson, and P. Forr´e, Reparameterizing distributions on lie
+groups, in International Conference on Learning Representations (ICLR), 2018.
+[25] L. Falorsi, P. Forr´e, P. De Haan, and T. Cohen, Explorations in homeomorphic variational
+auto-encoding, in International Conference on Machine Learning (ICML), 2019.
+[26] N. Tishby and N. Zaslavsky, Deep learning and the information bottleneck principle, Proc.
+ITW (2015).
+[27] D. P. Kingma and M. Welling, Auto-encoding variational bayes, in Proceedings of the 2nd
+International Conference on Learning Representations (ICLR), 2014.

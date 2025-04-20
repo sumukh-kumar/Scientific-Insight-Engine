@@ -6,7 +6,7 @@ import re
 import nltk
 from sentence_transformers import SentenceTransformer, util
 
-nltk.download('punkt')
+#nltk.download('punkt')
 
 # Load SciBERT model
 model = SentenceTransformer('allenai-specter')

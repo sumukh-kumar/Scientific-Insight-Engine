@@ -4,6 +4,7 @@ import sbert_ranking
 import csv
 import module2
 import re
+from simplification import simplify_extracted_info_and_save_all_in_one_file
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
@@ -83,3 +84,8 @@ for paper in extracted_info:
                 for sentence in sentences:
                     fp.write(f"\n{sentence}")
     i+=1
+#simplification part
+num_extracted_files = 10  
+
+simplify_extracted_info_and_save_all_in_one_file(num_files=num_extracted_files, 
+                                                output_filename="simplified_output.txt")
